@@ -8,7 +8,7 @@ To run this action add the step below in your GitHub Action:
    uses: microsoft/psscriptanalyzer-action@v1.0
    with:
     path: .\
-    recurse: true 
+    recurse: true
     output: results.sarif
 ```
 The above yaml code scans all the code in your repository and outputs the results to `result.sarif` at the CWD.
@@ -20,9 +20,9 @@ See the [input section](#Inputs) for more info about the inputs.
    uses: psscriptanalyzer-action
    with:
     path:
-    customRulePath: 
-    recurseCustomRulePath: 
-    excludeRule: 
+    customRulePath:
+    recurseCustomRulePath:
+    excludeRule:
     includeDefaultRules:
     includeRule:
     severity:
@@ -37,7 +37,7 @@ See the [input section](#Inputs) for more info about the inputs.
 
 # Inputs
 The inputs for the action. The inputs `output` and `ignorePattern` are action specific. The rest are mapped to the parameters of PSScriptAnalyzer.
-Every input is of type string. 
+Every input is of type string.
 
 To provide an array follow the format `'"value.fake", "value1.fake", ....'`
 ## path
@@ -76,7 +76,7 @@ with:
 Omits the specified rules from the Script Analyzer test. Wildcard characters are supported. More info [here](https://github.com/PowerShell/PSScriptAnalyzer/blob/master/docs/Cmdlets/Invoke-ScriptAnalyzer.md#-excluderule).
 ```yaml
 with:
-  # exclude one rule 
+  # exclude one rule
   excludeRule: '"PSAvoidLongLines"'
 ```
 ```yaml
@@ -89,7 +89,7 @@ with:
 Uses only the custom rules defined in the specified paths to the analysis. To still use the built-in rules, add the -IncludeDefaultRules switch. More info [here](https://github.com/PowerShell/PSScriptAnalyzer/blob/master/docs/Cmdlets/Invoke-ScriptAnalyzer.md#-includedefaultrules).
 ```yaml
 with:
-  includeDefaultRules: true 
+  includeDefaultRules: true
 ```
 ```yaml
 with:
@@ -106,7 +106,7 @@ with:
 ```yaml
 with:
   # Include multiple rules
-  includeRule: '"PSAvoidUsingInvokeExpression", "PSAvoidUsingConvertToSecureStringWithPlainText"' 
+  includeRule: '"PSAvoidUsingInvokeExpression", "PSAvoidUsingConvertToSecureStringWithPlainText"'
 ```
 
 ## severity
@@ -188,6 +188,12 @@ with:
   ignorePattern: 'tests'
 ```
 
+## consoleLog
+Log output directly to the console.
+```yaml
+consoleLog: true
+```
+
 # Project
 
 > This repo has been populated by an initial template to help get you started. Please
@@ -216,8 +222,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
